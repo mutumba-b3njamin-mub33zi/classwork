@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>dynamic application</title>
+        <style></style>
+        <style>
+            body{background-color: aqua;}
+            input,button{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+        </style>
+        <script src="./externaljs.js"></script>
+    </head>
+    <body onload="greet()">
+        <P>Hello world</P>
+        <button onclick="alert('hello mutumba benjamin')">click me</button>
+        <p id="text">this is my first html css and javascript fusion</p>
+        <!--<button onclick="document=getElementById('text').innerHTML='i am testing in my javascript'">change text</button>-->
+        <button onclick="texttoggle()">change text</button>
+
+
+
+        <button id ="click">internal javascript</button>
+        <button onclick="backgroundchange()">change background</button>
+        <h1>change the color</h1>
+        <input type="text" id="colorInput" placeholder="red">
+        <button onclick="changeBackground()">kyusa backigroundi</button>
+        <script>
+            function greet(){ alert ("welcome to the dynamic world")}
+
+            const buttonId=document.getElementById("click");
+            buttonId.onclick= function(){alert("button was clicked")}
+
+            buttonId.onmouseover= function(){
+                buttonId.style.color= "red"}
+
+                buttonId.onmouseout= function(){buttonId.style.color= "purple"}
+
+            function backgroundchange(){const colors=["red","cyan","pink","orange"];
+                document.body.style.backgroundColor =colors[Math.floor(Math.random()*colors.length)];
+            }
+            function changeBackground(){let color=document.getElementById("colorInput").value; document.body.style.backgroundColor=color;}
+            function texttoggle(){let textElement=document.getElementById("text"); if(textElement.innerText==="this is my first html css and javascript fusion"){textElement.innerText="i am testing in my javascript"}else{textElement.innerText="this is my first html css and javascript fusion"}}
+        </script>
+    </body>
+</html>
